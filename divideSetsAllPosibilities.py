@@ -17,12 +17,11 @@ def getSubsets(L):
 		set2=[]
 		set1=[]
 		for subset in subSets:
-			if checkSimilarity(subset,set1) and checkSimilarity(subset,set2) is True:
-				continue
-			set2.append(L.copy())
-			set1.append(subset.copy())
-			for n in subset:
-				set2[len(set2)-1].remove(n)
+			if checkSimilarity(subset,set1) is False and checkSimilarity(subset,set2) is False:
+				set2.append(L.copy())
+				set1.append(subset.copy())
+				for n in subset:
+					set2[len(set2)-1].remove(n)
 		return [set1,set2]
 	else:
 		return False
@@ -33,7 +32,7 @@ def checkSimilarity(s1,s2):
 			return True
 	return False
 #Running code
-L=[1,1,1,2,3,5,3,5,4,1]
+L=[1,1,1]
 subSets=getSubsets(L)
 if subSets:
 	print("The all possible 2 equal subsets are :")
