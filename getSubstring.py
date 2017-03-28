@@ -15,7 +15,11 @@ def nextIndex(sub,string,i):
 		else:
 			return False
 	return True
-myString=input("Enter long string: ")
-substring=input("Substring: ")
+myString=""
+substring=""
+while  myString=="":
+	myString=input("Enter long string: ")
+while substring=="":
+	substring=input("Substring: ")
 ind = getIndeces([],0,myString,substring)
 print(ind)
